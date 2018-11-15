@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Unit4BinaryConversion {
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner (System.in);
+		
+		int binary;
+		int decimal = 0, power = 0, temp = 0;
+		
+		System.out.println("Enter a binary number no longer than 8 digits:");
+		binary = input.nextInt();				
+		
+		while (binary != 0) {
+			temp = binary % 10;
+			temp *= Math.pow(2, power++);
+			binary /= 10;
+			decimal += temp;
+		}
+		System.out.printf("The decimal equivalent is: %d", decimal);
+	}
+}
